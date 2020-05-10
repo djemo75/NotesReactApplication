@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "isActive": true,
+      "isAdmin": true,
+      "picture": "https://i.pinimg.com/474x/18/c1/1a/18c11a9d2d85759063118c00012603f8--diane-cat-art.jpg",
+      "age": "22",
+      "name": "Djem Suleyman",
+      "username": "djem",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "isActive": false,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300",
+      "age": 32,
+      "name": "Roxanne Santiago",
+      "username": "roxana",
+      "password": 12345
+    },
+    {
+      "id": 3,
+      "isActive": false,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300",
+      "age": 40,
+      "name": "Steele Anderson",
+      "username": "steev",
+      "password": 12345
+    },
+    {
+      "id": 4,
+      "isActive": true,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300",
+      "age": 24,
+      "name": "Deana Salinas",
+      "username": "deana",
+      "password": 12345
+    },
+    {
+      "name": "kiril ivanov",
+      "username": "kiril",
+      "password": "123456",
+      "age": "30",
+      "isActive": false,
+      "isAdmin": false,
+      "picture": "https://picsum.photos/200/300?random=1",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "username": "test",
+      "password": "1234",
+      "name": "Testimo",
+      "age": 15,
+      "picture": "https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png",
+      "isActive": false,
+      "isAdmin": false
+    },
+    {
+      "id": 10,
+      "username": "test2",
+      "password": "1234",
+      "name": "Testov user2",
+      "age": 25,
+      "picture": "https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png",
+      "isActive": false,
+      "isAdmin": false
+    }
+  ],
+  "tasks": [{
+    "id": 1,
+    "userId": 1,
+    "title": "Writing homework - JS",
+    "description": "Deadline 20 May 2020",
+    "estimate": 3,
+    "status": "waiting",
+    "createdAt": "2020 data format"
+  },
+  {
+    "id": 1,
+    "userId": 1,
+    "title": "Practise with JS",
+    "description": "Must practise to understand concepts",
+    "estimate": 5,
+    "status": "waiting",
+    "createdAt": "2020 data format"
+  }]
+}
