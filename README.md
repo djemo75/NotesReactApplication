@@ -15,4 +15,12 @@ Registered users have status online/offline( when login account is online and wh
 
 ### Tasks information
 
-Work in progress...
+Users can see only own tasks. Every task have title, description, estimate(number in hours), created date, status(waiting or ready).
+
+In Home page, users see own task separetly by status in two tables. Users can edit and delete own tasks.
+
+Admins can see tasks of all users, when enter in user profile. When click task name also can edit or delete task.
+
+### Setup project
+ To start JSON server write in terminal: npm run server
+ To start React project write in terminal: npm start
