@@ -5,5 +5,5 @@ export type taskModel = {
   description: string;
   estimate: number; // In hours( 1=1H)
   status: string;  // Ready/waiting
-  createdAt: string;
+  createdAt: Date;
 };

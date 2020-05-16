@@ -1,5 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { Button, Modal, FormGroup, FormLabel } from 'react-bootstrap';
+import {
+  Button,
+  Modal,
+  FormGroup,
+  FormLabel,
+  Row,
+  Alert,
+} from 'react-bootstrap';
 import { userModel } from 'types/userModel';
 import { Formik, Field } from 'formik';
 import { editUser } from 'components/api/users';
@@ -13,6 +20,7 @@ type Props = {
 function ProfileEditForm({ data, onUpdate }: Props) {
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -42,10 +50,11 @@ function ProfileEditForm({ data, onUpdate }: Props) {
               setLoading(true);
               await editUser(values);
               onUpdate(values);
+              handleClose();
             } catch (err) {
+              setError(err.message);
             } finally {
               setLoading(false);
-              handleClose();
             }
           }}
         >
@@ -94,6 +103,8 @@ function ProfileEditForm({ data, onUpdate }: Props) {
                     name="age"
                     className="form-control"
                     placeholder="Enter age"
+                    min={0}
+                    max={100}
                     required
                   />
                 </FormGroup>
@@ -141,6 +152,11 @@ function ProfileEditForm({ data, onUpdate }: Props) {
                   {loading ? 'Please wait' : 'Edit'}
                 </Button>
               </Modal.Footer>
+              {error && (
+                <Row className="justify-content-center">
+                  <Alert variant="danger">{error}</Alert>
+                </Row>
+              )}
             </form>
           )}
         </Formik>

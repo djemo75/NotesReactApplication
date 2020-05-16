@@ -48,9 +48,9 @@ function Users() {
               Active now: {users.filter((x) => x.isActive === true).length}
             </h6>
             <Row>
-              {users.map((user) => (
-                <Col lg={3} key={user.id}>
-                  <UserCard user={user} />
+              {users.map((data) => (
+                <Col lg={3} key={data.id}>
+                  <UserCard user={data} />
                 </Col>
               ))}
             </Row>

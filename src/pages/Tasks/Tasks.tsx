@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useContext, useEffect } from 'react';
 import Layout from 'components/layout/Layout';
-import { Table } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import { taskModel } from 'types/taskModel.';
 import { getTasksByUserId } from 'components/api/tasks';
 import { AuthContext } from 'components/context/authContext';
+import TasksTables from 'components/domain/Tasks';
+import AddTaskModal from 'components/domain/Tasks/AddTaskModal';
 
 function Tasks() {
   const [tasks, setTasks] = useState<taskModel[]>([]);
@@ -20,35 +23,26 @@ function Tasks() {
     setLoading(false);
   };
 
+  const addTask = (task: taskModel) => {
+    setTasks([task, ...tasks]);
+  };
+
   useEffect(() => {
     loadTasks();
   }, []);
 
   return (
     <Layout>
-      <h2 style={{ margin: '1.5rem 0' }}>Tasks:</h2>
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>Task Title</th>
-            <th>Estimate</th>
-            <th>Status</th>
-            <th>Created Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tasks &&
-            tasks.length > 0 &&
-            tasks.map((task) => (
-              <tr key={task.id}>
-                <td>{task.title}</td>
-                <td>{task.estimate} hours</td>
-                <td>{task.status}</td>
-                <td>{task.createdAt}</td>
-              </tr>
-            ))}
-        </tbody>
-      </Table>
+      <h2 style={{ margin: '1.5rem 0' }}>
+        Tasks: <AddTaskModal onAdd={addTask} />
+      </h2>
+      {loading ? (
+        <Row className="justify-content-center">
+          <Spinner animation="border" />
+        </Row>
+      ) : (
+        tasks && tasks.length > 0 && <TasksTables tasks={tasks} />
+      )}
     </Layout>
   );
 }

@@ -12,27 +12,27 @@
     },
     {
       "id": 2,
-      "isActive": false,
-      "isAdmin": false,
-      "picture": "https://picsum.photos/200/300",
-      "age": 32,
-      "name": "Roxanne Santiago",
       "username": "roxana",
-      "password": 12345
+      "password": 12345,
+      "name": "Roxanne Santiago",
+      "age": 32,
+      "picture": "https://picsum.photos/200/200",
+      "isActive": false,
+      "isAdmin": false
     },
     {
       "id": 3,
-      "isActive": false,
-      "isAdmin": false,
-      "picture": "https://picsum.photos/200/300",
-      "age": 40,
-      "name": "Steele Anderson",
       "username": "steev",
-      "password": 12345
+      "password": 12345,
+      "name": "Steele Anderson",
+      "age": 40,
+      "picture": "https://picsum.photos/200/150",
+      "isActive": false,
+      "isAdmin": false
     },
     {
       "id": 4,
-      "isActive": true,
+      "isActive": false,
       "isAdmin": false,
       "picture": "https://picsum.photos/200/300",
       "age": 24,
@@ -69,24 +69,54 @@
       "picture": "https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png",
       "isActive": false,
       "isAdmin": false
+    },
+    {
+      "id": 11,
+      "username": "test5",
+      "name": "Test five",
+      "password": "123456",
+      "age": 15,
+      "picture": "https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png",
+      "isAdmin": false,
+      "isActive": false
     }
   ],
-  "tasks": [{
-    "id": 1,
-    "userId": 1,
-    "title": "Writing homework - JS",
-    "description": "Deadline 20 May 2020",
-    "estimate": 3,
-    "status": "waiting",
-    "createdAt": "2020 data format"
-  },
-  {
-    "id": 1,
-    "userId": 1,
-    "title": "Practise with JS",
-    "description": "Must practise to understand concepts",
-    "estimate": 5,
-    "status": "waiting",
-    "createdAt": "2020 data format"
-  }]
+  "tasks": [
+    {
+      "id": 3,
+      "userId": 1,
+      "title": "Writing homework React",
+      "description": "great task",
+      "estimate": 15,
+      "status": "waiting",
+      "createdAt": "2020-05-16T15:04:21.697Z"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "title": "Read documentation React",
+      "description": "read to understand magic",
+      "estimate": 8,
+      "status": "ready",
+      "createdAt": "2020-05-16T15:06:06.386Z"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "title": "Read project creteria React",
+      "description": "none for now",
+      "estimate": 1,
+      "status": "ready",
+      "createdAt": "2020-05-16T15:09:49.985Z"
+    },
+    {
+      "id": 8,
+      "userId": 9,
+      "title": "My pretty task",
+      "description": "first task for test",
+      "estimate": 5,
+      "status": "waiting",
+      "createdAt": "2020-05-16T15:35:46.417Z"
+    }
+  ]
 }

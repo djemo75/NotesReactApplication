@@ -11,6 +11,7 @@ import { useHistory } from 'react-router-dom';
 
 type AuthContextValue = {
   user: userModel | null;
+  userLoading: boolean;
   logout: (data: userModel) => void;
   login: (data: LoginModel) => Promise<void>;
   loginError: string | null;
@@ -57,6 +58,7 @@ export function AuthContexProvider({ children }: Props) {
 
   const [state, setState] = useState<State>({
     user: null,
+    userLoading: true,
     logout: logoutAction,
     login: loginAction,
     loginError: null,
@@ -66,7 +68,7 @@ export function AuthContexProvider({ children }: Props) {
 
   const loadUser = async () => {
     const res = await getMe();
-    setState((prev) => ({ ...prev, user: res }));
+    setState((prev) => ({ ...prev, user: res, userLoading: false }));
   };
 
   useEffect(() => {
