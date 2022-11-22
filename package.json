@@ -68,7 +68,7 @@
     "prettier": "^2.0.2",
     "prettier-eslint": "^9.0.1",
     "prettier-eslint-cli": "^5.0.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "typescript": "~3.7.2"
   },
   "husky": {
